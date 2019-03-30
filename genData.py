@@ -41,7 +41,7 @@ def snsScatterPlot(df):
 
 
 def snsRegPlot(df, lab, color='blue'):
-    sns.regplot(df["time in days"], df["Amount Spent"], color, label=lab).plot()
+    sns.regplot(df["time in days"], df["Amount Spent"], color, label=lab, order=3).plot()
 
 
 stock_prices = generatePrices(100)
