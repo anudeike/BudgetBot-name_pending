@@ -17,44 +17,45 @@ def Purchases():
 
         if emphasis == T:
             if chance < 25:
-                filewriter.writerow(['',0,0,grocP])
+                filewriter.writerow(['','','',grocP])
             if chance >= 25 and chance > 50:
-                filewriter.writerow(['',0,entertainP,0])
+                filewriter.writerow(['','',entertainP,''])
             if chance >= 50:
-                filewriter.writerow(['',transP,0,0]) #emphasis
+                filewriter.writerow(['',transP,'','']) #emphasis
                 
         if emphasis == E:
             if chance < 25:
-                filewriter.writerow(['',0,0,grocP])
+                filewriter.writerow(['','','',grocP])
             if chance >= 25 and chance > 50:
-                filewriter.writerow(['',transP,0,0])
+                filewriter.writerow(['',transP,'',''])
             if chance >= 50:
-                filewriter.writerow(['',0,entertainP,0]) #emphasis
+                filewriter.writerow(['',entertainP,'']) #emphasis
                 
         if emphasis == G:
             if chance < 25:
-                filewriter.writerow(['',transP,0,0])
+                filewriter.writerow([transP,'',''])
             if chance >= 25 and chance > 50:
-                filewriter.writerow(['',0,entertainP,0])
+                filewriter.writerow(['',entertainP,''])
             if chance >= 50:
-                filewriter.writerow(['',0,0,grocP]) #emphasis
+                filewriter.writerow(['','',grocP]) #emphasis
 
 
 with open('Person1.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['Name','Transportation','Entertainment','Groceries'])
+    filewriter.writerow(['Transportation','Entertainment','Groceries'])
     Purchases()
 
 with open('Person2.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['Name','Transportation','Entertainment','Groceries'])
+    filewriter.writerow(['Transportation','Entertainment','Groceries'])
 
     Purchases()
 
 with open('Person3.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['Name','Transportation','Entertainment','Groceries'])
+    filewriter.writerow(['Transportation','Entertainment','Groceries'])
     Purchases()
+
