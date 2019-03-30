@@ -40,42 +40,42 @@ def snsScatterPlot(df):
     sns.scatterplot(df["time in days"], df["Amount Spent"]).plot()
 
 
-def snsRegPlot(df, lab, color='blue'):
-    sns.regplot(df["time in days"], df["Amount Spent"], color, label=lab, order=3).plot()
+def snsRegPlot(df, lab, color='orange'):
+    sns.regplot(df["time in days"], df["Amount Spent"], color='limegreen', label=lab, order=3).plot()
 
 
 stock_prices = generatePrices(100)
 #plotData(stock_prices)
 
-#turn into a dataframe
+# #turn into a dataframe
 df = pd.DataFrame(data=stock_prices, columns=["Amount Spent"])
 df["time in days"] = [x for x in range(100)]
 print(df)
 #snsScatterPlot(df)
-plt.title("Historical Purchases Summary")
+plt.title("Historical Transportation Summary")
 snsRegPlot(df, 'Transportation', color='blue')
 
 #=====GENERATE OTHER TYPE============#
 # # Entertainment
 ent_cost = generatePrices(100)
-plotData(ent_cost)
-df = pd.DataFrame(data=ent_cost, columns=["Amount Spent"])
-df["time in days"] = [x for x in range(100)]
-snsRegPlot(df, 'Entertainment', color='orange')
+# plotData(ent_cost)
+# df = pd.DataFrame(data=ent_cost, columns=["Amount Spent"])
+# df["time in days"] = [x for x in range(100)]
+# snsRegPlot(df, 'Entertainment', color='orange')
 
-# Entertainment
+# # Entertainment
 gro_cost = generatePrices(100)
-plotData(gro_cost)
-df = pd.DataFrame(data=gro_cost, columns=["Amount Spent"])
-df["time in days"] = [x for x in range(100)]
-snsRegPlot(df, 'Groceries', color='red')
-
+# plotData(gro_cost)
+# df = pd.DataFrame(data=gro_cost, columns=["Amount Spent"])
+# df["time in days"] = [x for x in range(100)]
+# snsRegPlot(df, 'Groceries', color='red')
 #
-util_cost = generatePrices(100)
-plotData(util_cost)
-df = pd.DataFrame(data=util_cost, columns=["Amount Spent"])
-df["time in days"] = [x for x in range(100)]
-snsRegPlot(df, 'Utilities', color='purple')
+# #
+# util_cost = generatePrices(100)
+# plotData(util_cost)
+# df = pd.DataFrame(data=util_cost, columns=["Amount Spent"])
+# df["time in days"] = [x for x in range(100)]
+# snsRegPlot(df, 'Utilities', color='purple')
 
 #add the legend and descriptions
 plt.legend(loc='upper left')
